@@ -1,0 +1,8 @@
+loadtests:
+- name: single-repeated
+  duration: 1m
+  goroutines: 1
+  batch_size: 1
+  rotation_interval: 5
+  fire_interval: 1s
+  dataset_file: ./labelsets

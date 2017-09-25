@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 1s
+scrape_configs:
+  - job_name: 'alertmanager-a'
+    static_configs:
+    - targets:
+      - localhost:9093
+      - localhost:9094
+      - localhost:9095
+  - job_name: 'alertmanager-b'
+    static_configs:
+    - targets:
+      - localhost:10093
+      - localhost:10094
+      - localhost:10095
+  - job_name: 'loadtester'
+    static_configs:
+    - targets:
+      - localhost:8080

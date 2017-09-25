@@ -1,0 +1,8 @@
+aa1: ./alertmanager-a -storage.path=aa1 -web.listen-address=:9093 -mesh.peer-id=00:00:00:00:00:01 -mesh.nickname=a -mesh.listen-address=:8001 -config.file=alertmanager.yaml
+aa2: ./alertmanager-a -storage.path=aa2 -web.listen-address=:9094 -mesh.peer-id=00:00:00:00:00:02 -mesh.nickname=b -mesh.listen-address=:8002 -mesh.peer=127.0.0.1:8001 -config.file=alertmanager.yaml
+aa3: ./alertmanager-a -storage.path=aa3 -web.listen-address=:9095 -mesh.peer-id=00:00:00:00:00:03 -mesh.nickname=c -mesh.listen-address=:8003 -mesh.peer=127.0.0.1:8001 -config.file=alertmanager.yaml
+ba1: ./alertmanager-b -storage.path=ba1 -web.listen-address=:10093 -mesh.peer-id=00:00:00:00:00:04 -mesh.nickname=a -mesh.listen-address=:9001 -config.file=alertmanager.yaml
+ba2: ./alertmanager-b -storage.path=ba2 -web.listen-address=:10094 -mesh.peer-id=00:00:00:00:00:05 -mesh.nickname=b -mesh.listen-address=:9002 -mesh.peer=127.0.0.1:9001 -config.file=alertmanager.yaml
+ba3: ./alertmanager-b -storage.path=ba3 -web.listen-address=:10095 -mesh.peer-id=00:00:00:00:00:06 -mesh.nickname=c -mesh.listen-address=:9003 -mesh.peer=127.0.0.1:9001 -config.file=alertmanager.yaml
+p: prometheus --config.file=prometheus.yml
+

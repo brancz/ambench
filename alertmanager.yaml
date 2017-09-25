@@ -1,0 +1,14 @@
+global:
+  resolve_timeout: 60m
+
+route:
+  group_by: ['__name__']
+  group_wait: 5s
+  group_interval: 5s
+  repeat_interval: 10s
+  receiver: 'webhook'
+receivers:
+- name: 'webhook'
+  webhook_configs:
+  - url: 'http://127.0.0.1:8080/notify'
+    send_resolved: false
