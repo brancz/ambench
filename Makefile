@@ -1,3 +1,6 @@
+build:
+	go build
+
 clean:
 	rm -rf a1
 	rm -rf a2
@@ -9,3 +12,5 @@ clean:
 	rm -rf ba2
 	rm -rf ba3
 	rm -rf data
+
+.PHONY: build clean

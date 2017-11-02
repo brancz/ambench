@@ -12,3 +12,4 @@ labelsets
 test_results/
 alertmanager-a
 alertmanager-b
+ambench
