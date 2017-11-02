@@ -8,7 +8,6 @@ ba1/
 ba2/
 ba3/
 data/
-labelsets
 test_results/
 alertmanager-a
 alertmanager-b
