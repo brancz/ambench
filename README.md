@@ -34,10 +34,13 @@ This project is very young, and any kind of contributions to help and contribute
 
 I am by no means a distributed systems expert and the code in this repository is also in a rather rough state, I am open to changing this project in any way that leads to productive testing of the Alertmanger.
 
-## TODO
+## Roadmap
 
-This project so far only implements load production and data rotation over a given dataset with some configurable variables.
+This project so far only implements load production and data rotation over a given dataset with some configurable variables. A non exhaustive list of things that would greatly contribute to the stability of Alertmanager that could be part of this repository could include:
 
-In the future it would be useful to implement failure injection modes in order to be able to stress test different scenarios.
+* It would be useful to implement failure injection modes (network, disk, clock, etc.) in order to be able to stress test different scenarios.
+* The current report output is entirely a text format. For larger tests it will make sense to index the results and possibly analyze them further.
 
-The current report output is entirely a text format. For larger tests it will make sense to index the results and possibly analyze them further.
+Other things that might be interesting but possibly orthogonal:
+
+* Possibly this could also act as a suite of conformance tests to verify that an Alertmanager cluster is working as expected.
