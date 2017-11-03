@@ -1,6 +1,6 @@
 # ambench
 
-The tool or collection of tools in this repository is used to perform load and correctness testing against the [Prometheus Alertmanager](https://github.com/prometheus/alertmanager) project.
+`ambench` is a tool created to perform load and correctness testing against the [Prometheus Alertmanager](https://github.com/prometheus/alertmanager).
 
 The Prometheus Alertmanager implements a gossip protocol using eventually consistent delta CRDTs, this was implemented in order for the Alertmanager to have a high availability mode without any additional components. Given that the Alertmanager is a distributed system, the edge cases it yields are sometimes not easily discoverable, this project aims to provide tools to create reproducible functional tests with a predictable outcome.
 
