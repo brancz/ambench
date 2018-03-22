@@ -7,8 +7,10 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"os/signal"
+	"path"
 	"strings"
 	"syscall"
 
@@ -24,7 +26,19 @@ func Main() int {
 	noload := flag.Bool("noload", false, "Disable load producing.")
 	flag.Parse()
 
-	alertmanagers := strings.Split(*ams, ",")
+	alertmanagers := []string{}
+	for _, am := range strings.Split(*ams, ",") {
+		u, err := url.Parse(am)
+		if err != nil {
+			fmt.Fprint(os.Stderr, "invalid alertmanager %q:", err)
+			return 1
+		}
+		u.Path = strings.TrimRight(u.Path, "/")
+		if u.Path == "" {
+			u.Path = path.Join(u.Path, "api/v1/alerts")
+		}
+		alertmanagers = append(alertmanagers, u.String())
+	}
 
 	b, err := ioutil.ReadFile(*loadtestConfig)
 	if err != nil {
