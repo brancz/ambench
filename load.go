@@ -56,6 +56,8 @@ func RunLoadTests(done chan<- struct{}, r *WebhookReceiver, config LoadTestConfi
 			e.Print(reportFile)
 		}
 		reportFile.Close()
+
+		r.ResetEvents()
 	}
 
 	done <- struct{}{}

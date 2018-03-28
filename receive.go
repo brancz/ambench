@@ -90,6 +90,10 @@ func (wr *WebhookReceiver) Events() []Event {
 	return e
 }
 
+func (wr *WebhookReceiver) ResetEvents() {
+	wr.notifications = newNotificationList()
+}
+
 func (wr *WebhookReceiver) Handler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		data := WebhookData{}
